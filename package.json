@@ -6,6 +6,7 @@
   "author": "Roshan K Gujarathi",
   "license": "MIT",
   "private": false,
+  "repository": "https://github.com/roshanreacts/realmoose",
   "scripts": {
     "build": "tsc",
     "start": "nodemon"
@@ -25,5 +26,8 @@
     "lodash": "^4.17.20",
     "realm": "^10.1.4",
     "realm-query": "^0.0.7"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/realmoose"
   }
 }
