@@ -1,12 +1,23 @@
 {
   "name": "realmoose",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "description": "A mongoose like ORM for Realm DB.",
   "main": "index.js",
   "author": "Roshan K Gujarathi",
   "license": "MIT",
   "private": false,
   "repository": "https://github.com/roshanreacts/realmoose",
+  "keywords": [
+    "realm",
+    "RealmDB",
+    "realmjs",
+    "realmdb orm",
+    "orm",
+    "realmjs orm",
+    "mongoose",
+    "mongodb",
+    "realmoose"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "nodemon"
@@ -26,8 +37,5 @@
     "lodash": "^4.17.20",
     "realm": "^10.1.4",
     "realm-query": "^0.0.7"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/realmoose"
   }
 }
