@@ -2,7 +2,7 @@
   "name": "realmoose",
   "version": "1.0.2",
   "description": "A mongoose like ORM for Realm DB.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "author": "Roshan K Gujarathi",
   "license": "MIT",
   "private": false,
