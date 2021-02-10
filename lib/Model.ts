@@ -1,6 +1,8 @@
 import Realm from "realm";
 import { ObjectID } from "bson";
 import _ from "lodash";
+import RealmQuery from "realm-query";
+
 import Document from "./Document";
 
 class Model {
@@ -31,11 +33,16 @@ class Model {
     return this.Document().create(obj);
   }
 
-  validate(schemaObj: any) {
+  validate(schemaObj: any, update: boolean = false) {
     this._schema.unqieFields.map((field: any) => {
       if (_.has(schemaObj, field)) {
-        const check = this.findOne(`${field} == $0`, schemaObj[field]);
-        if (check != null) {
+        const check = update
+          ? this.find(`${field} == $0 AND _id != $1`, [
+              schemaObj[field],
+              schemaObj["_id"],
+            ])
+          : this.find(`${field} == $0`, schemaObj[field]);
+        if (check.length > 0) {
           throw new Error(`${field} should have a unique value.`);
         }
       }
@@ -43,7 +50,11 @@ class Model {
     return true;
   }
 
-  create(schemaObj: any): any {
+  query(): RealmQuery {
+    return RealmQuery.where(this.realm.objects(this.schema.name));
+  }
+
+  create(schemaObj: any) {
     let createObj;
     this.validate(schemaObj);
     this.realm.write(() => {

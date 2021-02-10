@@ -3,4 +3,5 @@ interface Model {
   _schema: Schema;
   schema: { name: string; primaryKey: string; properties: Schema["schema"] };
   realm: Realm;
+  validate: Function;
 }
