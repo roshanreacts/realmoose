@@ -1,6 +1,6 @@
 {
   "name": "realmoose",
-  "version": "1.0.2",
+  "version": "2.0.1",
   "description": "A mongoose like ORM for Realm DB.",
   "main": "./dist/index.js",
   "author": "Roshan K Gujarathi",
