@@ -7,11 +7,20 @@ import Document from "./Document";
 
 class Model {
   _base: Realmoose;
-  _schema: Schema;
-  schema: { name: string; primaryKey: string; properties: Schema["schema"] };
+  _schema: SchemaType;
+  schema: {
+    name: string;
+    primaryKey: string;
+    properties: SchemaType["schema"];
+  };
   realm: Realm;
 
-  constructor(base: Realmoose, name: string, schema: Schema, version: number) {
+  constructor(
+    base: Realmoose,
+    name: string,
+    schema: SchemaType,
+    version: number
+  ) {
     this._base = base;
     this._schema = schema;
     this.schema = {

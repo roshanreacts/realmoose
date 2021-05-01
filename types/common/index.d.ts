@@ -1,3 +1,4 @@
 interface Realmoose {
-  __path: string;
+  __path?: string;
+  __appId?: string;
 }
